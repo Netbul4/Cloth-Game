@@ -17,6 +17,9 @@ namespace clothgame{
 
         public ClothController[] cloths;
 
+        public static int money = 100;
+        public int m;
+
         Animator anim;
         RaycastHit2D hit;
 
@@ -46,6 +49,7 @@ namespace clothgame{
         {
             Move();
             InteractCheck();
+            m = money;
         }
 
         bool CheckCol{

@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b0bd01beb59b8a488e9985469573e6b, type: 3}
   m_Name: Black_Shirt
   m_EditorClassIdentifier: 
+  clothType: 0
   icon: {fileID: -778893709, guid: e96a48ff06275d244aee30d9c3d21d85, type: 3}
   name: Black Shirt
   description: A gothic black shirt.
+  price: 12
   overrideController: {fileID: 22100000, guid: f74c8f0e28076ae4a853b155738134e3, type: 2}
   animations:
   - {fileID: 7400000, guid: 64afaf4e256887f4089617f1080784e0, type: 2}

@@ -5,7 +5,17 @@ using UnityEngine;
 namespace clothgame{
     public class Inventory : MonoBehaviour
    {
-       public static Inventory instance;
+        static Inventory instance;
+
+        public static Inventory MyInstance{
+            get{
+                if(instance == null){
+                    instance = FindObjectOfType<Inventory>();
+                }
+
+                return instance;
+            }
+        }
 
        public List<SlotScript> slots = new List<SlotScript>();
        public Canvas invCanvas;
@@ -13,14 +23,13 @@ namespace clothgame{
 
        private void Update() {
          if(Input.GetKeyDown(KeyCode.I)) invCanvas.gameObject.SetActive(true);
-         if(Input.GetKeyDown(KeyCode.K)) AddItem(cl);
        }
 
        public void Close(){
         invCanvas.gameObject.SetActive(false);
        }
 
-       public bool AddItem(Cloth cloth){
+       public bool AddItemToInv(Cloth cloth){
         foreach (SlotScript slot in slots)
         {
             if(slot.IsEmpty){

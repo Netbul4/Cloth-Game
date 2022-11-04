@@ -8,6 +8,8 @@ namespace clothgame{
     public class SlotScript : MonoBehaviour
     {
         public Cloth thisCloth;
+
+        public int price;
         Button MyButton;
 
         [SerializeField]
@@ -22,7 +24,7 @@ namespace clothgame{
         public bool AddItem(Cloth cloth){
             icon.sprite = cloth.MyIcon;
             thisCloth = cloth;
-                icon.color = new Color(1,1,1,1f);
+            icon.color = new Color(1,1,1,1f);
             return true;
         }
 

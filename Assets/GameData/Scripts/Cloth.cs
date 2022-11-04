@@ -13,6 +13,7 @@ namespace clothgame{
         public Sprite icon;
         public string name;
         public string description;
+        public int price;
         private SlotScript slot;
 
         public AnimatorOverrideController overrideController;
