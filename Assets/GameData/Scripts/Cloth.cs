@@ -6,11 +6,35 @@ namespace clothgame{
     
     [CreateAssetMenu(fileName = "Cloth", menuName = "Item/Cloth", order = 0)]
     public class Cloth : ScriptableObject {
+
+        public enum ClothType{shirt, pant};
+        public ClothType clothType;
+
+        public Sprite icon;
         public string name;
         public string description;
-        public Sprite icon;
+        private SlotScript slot;
 
-        public Animation[] animations;
+        public AnimatorOverrideController overrideController;
+        public AnimationClip[] animations;
+
+
+        public Sprite MyIcon{
+            get{
+                return icon;
+            }
+        }
+
+
+        protected SlotScript Slot{
+            get{
+                return slot;
+            }
+
+            set{
+                slot = value;
+            }
+        }
     }
 
 }

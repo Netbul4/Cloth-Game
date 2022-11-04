@@ -12,7 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b0bd01beb59b8a488e9985469573e6b, type: 3}
   m_Name: Black_Shirt
   m_EditorClassIdentifier: 
+  icon: {fileID: -778893709, guid: e96a48ff06275d244aee30d9c3d21d85, type: 3}
   name: Black Shirt
   description: A gothic black shirt.
-  icon: {fileID: -778893709, guid: e96a48ff06275d244aee30d9c3d21d85, type: 3}
-  animations: []
+  overrideController: {fileID: 22100000, guid: f74c8f0e28076ae4a853b155738134e3, type: 2}
+  animations:
+  - {fileID: 7400000, guid: 64afaf4e256887f4089617f1080784e0, type: 2}
+  - {fileID: 7400000, guid: 891343e0c8bd1b546874cd32111d32ef, type: 2}
+  - {fileID: 7400000, guid: 61b9f4b2f30d4334a9446fd521531249, type: 2}
+  - {fileID: 7400000, guid: eddde4c6f524bb342af4cd09c52117f0, type: 2}
+  - {fileID: 7400000, guid: a2ae3d75a29061144acfe6ed1519265b, type: 2}
+  - {fileID: 7400000, guid: 2237287e0e1cea642854138028ccacf3, type: 2}
+  - {fileID: 7400000, guid: eff4572943e5bf94db7744e9c4edf348, type: 2}
+  - {fileID: 7400000, guid: e8c5e575a1a4a2e4ea54b7d1c8582d48, type: 2}
