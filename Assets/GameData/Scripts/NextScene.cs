@@ -20,7 +20,7 @@ namespace clothgame{
 
         IEnumerator LoadLevel(int index){
             anim.SetBool("change", true);
-            yield return new WaitForSeconds(1.0f);
+            yield return new WaitForSeconds(3.0f);
             SceneManager.LoadScene(index);
             yield return 0;
         }
