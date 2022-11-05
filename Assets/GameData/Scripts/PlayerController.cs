@@ -27,7 +27,7 @@ namespace clothgame{
         LayerMask obstacle;
 
         [SerializeField]
-        LayerMask interactable;
+        LayerMask interact;
 
         [SerializeField]
         Vector3 v3;
@@ -143,12 +143,21 @@ namespace clothgame{
         }
 
         public void InteractCheck(){
-            RaycastHit2D h = Physics2D.Raycast(transform.position + v3, dir, 1, interactable);
 
-            if(h && Input.GetKeyDown(KeyCode.Space)){
-                var d = h.collider.GetComponent<DialogueTrigger>();
-                d.TriggerDialogue();
+            RaycastHit2D hit = Physics2D.Raycast(transform.position + v3, dir, 1, interact);
+
+            if(hit.collider != null){
+                if(hit.collider.CompareTag("Interactable") && Input.GetKeyDown(KeyCode.Space)){
+                DialogueTrigger dialogue = hit.collider.GetComponent<DialogueTrigger>();
+                dialogue.TriggerDialogue();
             }
+
+            if(hit.collider.CompareTag("Door") && Input.GetKeyDown(KeyCode.Space)){
+                NextScene scene = hit.collider.GetComponent<NextScene>();
+                StartCoroutine(scene.LoadLevel(scene.sceneIndex));
+            }
+            }
+            
 
         }
 

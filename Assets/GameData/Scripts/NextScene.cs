@@ -6,19 +6,12 @@ using UnityEngine.SceneManagement;
 namespace clothgame{
     public class NextScene : MonoBehaviour
     {
-        [SerializeField]
-        int sceneIndex;
+        public int sceneIndex;
 
         [SerializeField]
         Animator anim;
 
-        void OnTriggerEnter2D(Collider2D other) {
-            if(other.CompareTag("Player")){
-                StartCoroutine(LoadLevel(sceneIndex));
-            }
-        }
-
-        IEnumerator LoadLevel(int index){
+        public IEnumerator LoadLevel(int index){
             anim.SetBool("change", true);
             yield return new WaitForSeconds(3.0f);
             SceneManager.LoadScene(index);
