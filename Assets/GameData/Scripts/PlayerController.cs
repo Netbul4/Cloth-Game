@@ -15,6 +15,7 @@ namespace clothgame{
 
         float[] walking;
 
+        public Coordinates coordinates;
         public ClothController[] cloths;
 
         public static int money = 100;
@@ -43,6 +44,7 @@ namespace clothgame{
             anim = GetComponent<Animator>();
             walking = new float[4];
             pose = transform.position;
+            transform.position = coordinates.coord;
         }
 
         void Update()
