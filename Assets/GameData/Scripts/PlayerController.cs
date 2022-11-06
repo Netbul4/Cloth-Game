@@ -7,36 +7,50 @@ namespace clothgame{
 
     public class PlayerController : MonoBehaviour
     {
-        [SerializeField]
-        float speed;
+        [SerializeField] 
+        float speed;    //Move Speed of the player.
 
         [SerializeField]
-        float delay;
+        float delay;    //Delay to start moving.
+
+        [SerializeField]
+        GameObject interactSign; //Sign that shows player that can interact with the object.
+
+        [SerializeField]
+        LayerMask obstacle; //Obstacle Layer.
+
+        [SerializeField]
+        LayerMask interact; //Interactable Layer.
+
+        [SerializeField]
+        Vector3 v3;     //Vector for check collisions.
+
 
         float[] walking;
-
         public Coordinates coordinates;
         public ClothController[] cloths;
 
         public static int money = 100;
-        public int m;
 
         Animator anim;
         RaycastHit2D hit;
 
-        [SerializeField]
-        LayerMask obstacle;
-
-        [SerializeField]
-        LayerMask interact;
-
-        [SerializeField]
-        Vector3 v3;
 
         Vector3 dir;
         Vector3 pose;
 
         public static bool isWalk;
+
+        public static PlayerController player;
+
+        private void Awake() {
+            if(player != null){
+                Destroy(gameObject);
+            }else{
+                player = this;
+                DontDestroyOnLoad(gameObject);
+            }
+        }
 
         void Start()
         {
@@ -44,22 +58,21 @@ namespace clothgame{
             anim = GetComponent<Animator>();
             walking = new float[4];
             pose = transform.position;
-            transform.position = coordinates.coord;
         }
 
         void Update()
         {
             Move();
             InteractCheck();
-            m = money;
         }
 
+        //This check if the player are colliding with an obstacle object.
         bool CheckCol{
             get
             {
-                hit = Physics2D.Raycast(transform.position + v3, dir, 1, obstacle);
+                hit = Physics2D.Raycast(transform.position + v3, dir, 1, obstacle); //Draw a Raycast with the obstacle filter.
 
-                return hit.collider != null;
+                return hit.collider != null;  //Returns true.
             }
         }
 
@@ -73,7 +86,7 @@ namespace clothgame{
 
             if(Input.GetKey(KeyCode.W)){
                 dir = new Vector2(0, 1);
-                walking[0] += 1 * Time.deltaTime;
+                walking[0] += 1 * Time.deltaTime;  // this add values for start walking 
                 if(transform.position == pose){
                     SetAnimParameters(0, 1);
 
@@ -90,7 +103,7 @@ namespace clothgame{
 
             if(Input.GetKey(KeyCode.S)){
                 dir = new Vector2(0, -1);
-                walking[1] += 1 * Time.deltaTime;
+                walking[1] += 1 * Time.deltaTime;  // this add values for start walking 
                 if(transform.position == pose){
                     SetAnimParameters(0, -1);
 
@@ -106,7 +119,7 @@ namespace clothgame{
 
             if(Input.GetKey(KeyCode.A)){
                 dir = new Vector2(-1, 0);
-                walking[3] += 1 * Time.deltaTime;
+                walking[3] += 1 * Time.deltaTime;  // this add values for start walking 
                 if(transform.position == pose){
                     SetAnimParameters(-1, 0);
 
@@ -123,7 +136,7 @@ namespace clothgame{
 
             if(Input.GetKey(KeyCode.D)){
                 dir = new Vector2(1, 0);
-                walking[2] += 1 * Time.deltaTime;
+                walking[2] += 1 * Time.deltaTime;  // this add values for start walking 
                 if(transform.position == pose){
                     SetAnimParameters(1, 0);
 
@@ -141,39 +154,42 @@ namespace clothgame{
                 isWalk = false;
             }
 
-            transform.position = Vector3.MoveTowards(transform.position, pose, speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, pose, speed * Time.deltaTime); // Move the character.
+
         }
 
+        //This check the types of interactable objects.
         public void InteractCheck(){
 
-            RaycastHit2D hit = Physics2D.Raycast(transform.position + v3, dir, 1, interact);
+            RaycastHit2D hit = Physics2D.Raycast(transform.position + v3, dir, 1, interact); //Draw the same Raycast of Obstacles but filtering by Interact Layer.
 
             if(hit.collider != null){
+                interactSign.SetActive(true);
+
                 if(hit.collider.CompareTag("Interactable") && Input.GetKeyDown(KeyCode.Space)){
-                DialogueTrigger dialogue = hit.collider.GetComponent<DialogueTrigger>();
+                DialogueTrigger dialogue = hit.collider.GetComponent<DialogueTrigger>(); //Launch the dialogue of the NPC/Object.
                 dialogue.TriggerDialogue();
             }
 
             if(hit.collider.CompareTag("Door") && Input.GetKeyDown(KeyCode.Space)){
-                NextScene scene = hit.collider.GetComponent<NextScene>();
-                StartCoroutine(scene.LoadLevel(scene.sceneIndex));
+                NextScene scene = hit.collider.GetComponent<NextScene>(); // Get the Change Scenes Script.
+                StartCoroutine(scene.LoadLevel(scene.sceneIndex)); //Launch the load of next scene.
             }
+            }else{
+                interactSign.SetActive(false);
             }
             
 
         }
 
-        void OnDrawGizmos(){
-            Gizmos.DrawRay(transform.position + v3, dir);
-        }
-
+        //This set the Animation values for the player and the clothes.
         public void SetAnimParameters(float x, float y){
             anim.SetFloat("horizontal", x);
             anim.SetFloat("vertical", y);
             
 
             foreach(ClothController c in cloths){
-                c.SetAnimatorParameters(x, y);
+                c.SetAnimatorParameters(x, y);     //Set the parameters of each cloth holder in the character.
             }
         }
     }

@@ -18,7 +18,6 @@ namespace clothgame{
        }
 
        public void Use(Cloth cloth) {
-        anim = GetComponentInParent<Animator>();
         anim.runtimeAnimatorController = animatorOverrideController;
         previewImage.sprite = cloth.icon;
         previewImage.color = new Color (1,1,1,1);

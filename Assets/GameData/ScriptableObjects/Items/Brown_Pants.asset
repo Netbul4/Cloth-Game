@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b0bd01beb59b8a488e9985469573e6b, type: 3}
+  m_Name: Brown_Pants
+  m_EditorClassIdentifier: 
+  clothType: 1
+  icon: {fileID: -849978881, guid: 47480c83f807cf8428ecccd0cbbb1af0, type: 3}
+  name: Brown Pants
+  description: A rustic Brown Pants.
+  price: 12
+  overrideController: {fileID: 22100000, guid: 2626a619043f91b4d85511486c21c5f6, type: 2}
+  animations:
+  - {fileID: 7400000, guid: 920f3f871a57c6443a68b5713e297b75, type: 2}
+  - {fileID: 7400000, guid: 343f65b3aaf941944b0d72facdc94d15, type: 2}
+  - {fileID: 7400000, guid: e4ae0cfaf6d48604686645b8fbb115e4, type: 2}
+  - {fileID: 7400000, guid: cded781e3ac5eaa47b1f1ded90860654, type: 2}
+  - {fileID: 7400000, guid: 00a64fc7944b6574b8dbb70d97ee7ccf, type: 2}
+  - {fileID: 7400000, guid: 1cc36e0da0bd1b14a84105bd2864f56e, type: 2}
+  - {fileID: 7400000, guid: d53ad405993c9cf48bfe49f13d40098b, type: 2}
+  - {fileID: 7400000, guid: cbd036f6b8d07c643aec5978eecae545, type: 2}

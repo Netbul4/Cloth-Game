@@ -19,7 +19,7 @@ namespace clothgame{
         public AnimatorOverrideController overrideController;
         public AnimationClip[] animations;
 
-
+        //To get the Icon in other classes.
         public Sprite MyIcon{
             get{
                 return icon;
@@ -27,6 +27,7 @@ namespace clothgame{
         }
 
 
+        //To get this Slot in other classes.
         protected SlotScript Slot{
             get{
                 return slot;

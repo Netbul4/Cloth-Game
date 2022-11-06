@@ -148,6 +148,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisCloth: {fileID: 0}
+  actions: {fileID: 0}
+  price: 0
   icon: {fileID: 5362583948431373232}
 --- !u!1 &8147083582332762150
 GameObject:

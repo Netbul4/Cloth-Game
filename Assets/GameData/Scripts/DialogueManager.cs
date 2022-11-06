@@ -12,12 +12,12 @@ namespace clothgame
     public TextMeshProUGUI nameText, dialogueText;
     private Queue<string> sentences;
 
-    // Start is called before the first frame update
     void Start()
     {
-        sentences = new Queue<string>();
+        sentences = new Queue<string>(); // Set the new Queue for the dialogues.
     }
 
+    //Start the Dialogue of the object/npc.
     public void StartDialogue(Dialogue dialogue)
     {
         TextCanvas.SetActive(true);
@@ -27,14 +27,15 @@ namespace clothgame
 
         foreach (string sentence in dialogue.sentences)
         {
-            sentences.Enqueue(sentence);
+            sentences.Enqueue(sentence);     //Display each sentence of the Queue.
         }
 
         DisplayNextSentence();
     }
 
+    //This display the Next Sentence and check if the Dialogue is ended.
     public void DisplayNextSentence(){
-        if(sentences.Count == 0)
+        if(sentences.Count == 0) //Check if there no are more sentences.
         {
             EndDialogue();
             return;
@@ -44,6 +45,7 @@ namespace clothgame
         dialogueText.text = sentence;
     }
 
+    //Finish the Dialogue.
     void EndDialogue(){
         TextCanvas.SetActive(false);
     }

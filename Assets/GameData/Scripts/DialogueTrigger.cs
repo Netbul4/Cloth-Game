@@ -7,6 +7,7 @@ namespace clothgame{
 {
     public Dialogue dialogue;
 
+    //Open the Dialogue and displays it.
     public void TriggerDialogue(){
         FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
     }
