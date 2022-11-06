@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Green_Shirt
   m_EditorClassIdentifier: 
   clothType: 0
-  icon: {fileID: -52614379, guid: dedd2f821541a5540a2b88d270204d6d, type: 3}
+  icon: {fileID: 21300000, guid: 32650de8d7d638941910e55a6a48329c, type: 3}
   name: Green Shirt
   description: A refreshing green shirt.
   price: 12

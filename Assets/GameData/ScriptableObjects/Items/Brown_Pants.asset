@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Brown_Pants
   m_EditorClassIdentifier: 
   clothType: 1
-  icon: {fileID: -849978881, guid: 47480c83f807cf8428ecccd0cbbb1af0, type: 3}
+  icon: {fileID: 21300000, guid: 21920d09052e3f64c8dc61bfdb5d3068, type: 3}
   name: Brown Pants
   description: A rustic Brown Pants.
   price: 12

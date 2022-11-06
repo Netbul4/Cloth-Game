@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Black_Pants
   m_EditorClassIdentifier: 
   clothType: 1
-  icon: {fileID: 2027090016, guid: 5b2590ce59f06334187ff861bde5eef9, type: 3}
+  icon: {fileID: 21300000, guid: 05e3e0a700d40684cb9bd02a0c5117fe, type: 3}
   name: Black Pants
   description: A gothic black pants.
   price: 12

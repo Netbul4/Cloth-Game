@@ -38,7 +38,7 @@ namespace clothgame{
         //Remove the Item of the Slot.
         public bool RemoveItem(Cloth cloth){
             if(!IsEmpty){
-                thisCloth = cloth;
+                thisCloth = null;
                 cloth = null;
                 icon.color = new Color(0,0,0,0);
                 return true;

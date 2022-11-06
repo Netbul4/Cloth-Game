@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Blue_Shirt
   m_EditorClassIdentifier: 
   clothType: 0
-  icon: {fileID: 1414310845, guid: 17b66646dd630b7499ac0dca8a730539, type: 3}
+  icon: {fileID: 21300000, guid: e2c5187a57f5c79429395db774f75a26, type: 3}
   name: Blue Shirt
   description: A cute blue shirt.
   price: 12

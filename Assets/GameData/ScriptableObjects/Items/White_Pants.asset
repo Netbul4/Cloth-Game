@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: White_Pants
   m_EditorClassIdentifier: 
   clothType: 1
-  icon: {fileID: -152821178, guid: f0f8b1d227ff8274e9bc60d76e332479, type: 3}
+  icon: {fileID: 21300000, guid: 51d565f106777554ea9bfb3b2814debc, type: 3}
   name: White Pants
   description: An elegant white pants
   price: 12

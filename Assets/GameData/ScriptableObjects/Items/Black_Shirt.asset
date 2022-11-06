@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Black_Shirt
   m_EditorClassIdentifier: 
   clothType: 0
-  icon: {fileID: -778893709, guid: e96a48ff06275d244aee30d9c3d21d85, type: 3}
+  icon: {fileID: 21300000, guid: a87f46f506b97be469ea1bd5d6e60692, type: 3}
   name: Black Shirt
   description: A gothic black shirt.
   price: 12

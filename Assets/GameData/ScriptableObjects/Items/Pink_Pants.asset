@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Pink_Pants
   m_EditorClassIdentifier: 
   clothType: 1
-  icon: {fileID: -606518870, guid: 815966696b747544ea6e4f387c465fce, type: 3}
+  icon: {fileID: 21300000, guid: c57640b5df83f3140bb75686c552f692, type: 3}
   name: Pink Pants
   description: An awesome pink pants.
   price: 12
